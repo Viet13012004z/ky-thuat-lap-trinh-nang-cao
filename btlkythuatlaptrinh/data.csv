@@ -1,0 +1,38 @@
+item_id,item_name,gender,age_min,style_code,price,image_url,category,rating,rating_count
+1,Áo Hoodie Streetwear,0,18,2,400000,anh1.jpg,top,4.8,11
+2,Quần Jogger Túi Hộp,0,18,3,100000,anh2.jpg,bottom,4.5,8
+3,Váy Midi Cá Tính,1,20,3,500000,anh3.jpg,dress,4.9,15
+4,Áo Blazer Công Sở,1,25,1,148000,anh4.jpg,top,4.7,12
+5,Quần Tây Thanh Lịch,0,25,1,840000,anh5.jpg,bottom,4.6,9
+6,Đầm Dạ Hội Quý Phái,1,25,1,14000000,anh6.jpg,dress,5.0,20
+7,Áo Thun Oversize,0,18,3,140000,anh7.jpg,top,4.4,7
+8,Chân Váy Ngắn Streetstyle,1,18,3,199000,anh8.jpg,bottom,4.5,6
+9,Bộ Suit Nam Cao Cấp,0,28,1,190000,anh9.jpg,set,4.9,11
+10,Áo Khoác Bomber,0,18,3,111000,anh10.jpg,top,4.3,5
+11,Áo Sơ Mi Slim-fit,0,24,1,221000,anh11.jpg,top,4.4,5
+12,Chân Váy Bút Chì,1,24,1,333000,anh12.jpg,bottom,4.4,3
+13,Áo Croptop Năng Động,1,18,2,197000,anh13.jpg,top,4.7,14
+14,Quần Jean Rách Gối,0,18,3,143000,anh14.jpg,bottom,4.5,8
+15,Đầm Maxi Boho,1,22,3,141000,anh15.jpg,dress,4.6,7
+16,Áo Polo Basic,0,25,1,169000,anh16.jpg,top,4.4,3
+17,Áo Khoác Dạ Dáng Dài,1,26,1,940000,anh17.jpg,top,4.8,18
+18,Quần Short Cargo,0,18,3,180000,anh18.jpg,bottom,4.3,5
+19,Áo Trễ Vai Sexy,1,20,3,760000,anh19.jpg,top,4.7,13
+20,Bộ Đồ Tập Gym Pro,1,20,2,550000,anh20.jpg,set,4.9,16
+21,Áo Khoác Jean Bụi Bặm,0,18,3,410000,anh21.jpg,top,4.5,9
+22,Quần Culottes Công Sở,1,24,1,540000,anh22.jpg,bottom,4.4,8
+23,Mũ Lưỡi Trai Hip-hop,0,18,3,150000,anh23.jpg,accessory,4.2,4
+24,Váy Tennis Thể Thao,1,16,2,710000,anh24.jpg,bottom,4.6,10
+25,Áo Gilet Thanh Lịch,0,26,1,320000,anh25.jpg,top,4.3,3
+26,Giày Sneaker Chunky,0,18,3,160000,anh26.jpg,shoes,4.8,12
+27,Túi Xách Da Minimalist,1,25,1,140000,anh27.jpg,accessory,4.5,9
+28,Giày Chạy Bộ Nike,0,18,2,140000,anh28.jpg,shoes,4.7,13
+29,Kính Mát Phi Công,0,20,3,140000,anh29.jpg,accessory,4.2,5
+30,Thắt Lưng Da Công Sở,0,26,1,140000,anh30.jpg,accessory,4.1,4
+31,Giày thể thao addidas,1,22,3,145555,anh31.jpg,shoes,4.6,7
+32,Quần Short Thể Thao,0,18,2,660000,anh32.jpg,bottom,4.4,6
+34,Bộ Đồ Tập Yoga,1,20,2,777000,anh34.jpg,set,4.8,9
+35,Áo Bra Thể Thao,1,18,2,169000,anh35.jpg,top,4.5,8
+36,Quần Legging Co Giãn,1,19,2,199000,anh36.jpg,bottom,4.4,5
+37,Giày Thể Thao Pro,0,20,2,440000,anh37.jpg,shoes,4.5,7
+38,Túi Đựng Đồ Gym,1,20,2,290000,anh38.jpg,accessory,4.3,4

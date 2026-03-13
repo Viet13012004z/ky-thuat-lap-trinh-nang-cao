@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết quả tìm kiếm</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container wide">
+        <div class="header-flex">
+            <h2>Kết quả tìm kiếm: <span class="query-highlight">"{{ query }}"</span></h2>
+            <a href="/" class="link-gold">← Quay lại</a>
+        </div>
+
+        <div class="main-result">
+            {% if results %}
+            <div class="product-card card-center">
+                <div class="image-box">
+                    <img src="{{ url_for('static', filename='images/' + results[0].image_url) }}" alt="{{ results[0].item_name }}" class="p-img">
+                </div>
+                <div class="product-info">
+                    <h3>{{ results[0].item_name }}</h3>
+                    <p class="price">{{ "{:,}đ".format(results[0].price).replace(',', '.') }}</p>
+                    <a href="/checkout?item_name={{ results[0].item_name }}&image={{ results[0].image_url }}" class="btn-main">ĐẶT MUA NGAY</a>
+                </div>
+            </div>
+            {% else %}
+            <p class="text-center">Không tìm thấy sản phẩm này.</p>
+            {% endif %}
+        </div>
+
+        {% if suggestions %}
+        <h4 class="section-title">✨ GỢI Ý PHỐI CÙNG</h4>
+        <div class="result-grid">
+            {% for s in suggestions %}
+            <div class="product-card">
+                <div class="image-box suggestion-img-box">
+                    <img src="{{ url_for('static', filename='images/' + s.image_url) }}" alt="{{ s.item_name }}" class="p-img">
+                </div>
+                <div class="product-info">
+                    <h3>{{ s.item_name }}</h3>
+                    <p class="price">{{ "{:,}đ".format(s.price).replace(',', '.') }}</p>
+                    <a href="/checkout?item_name={{ s.item_name }}&image={{ s.image_url }}" class="btn-main btn-small">MUA NGAY</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fashion Advisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container container-home">
+        <h1>AI FASHION</h1>
+
+        <form action="/search" method="get" class="search-form">
+            <label for="search-input" class="visually-hidden">Tìm kiếm sản phẩm</label>
+            <input type="text" id="search-input" name="q" placeholder="Tìm đồ: Hoodie, Gym, Nike..." required class="input-field">
+            <button type="submit" class="btn-main btn-search btn-search-fix">Tìm</button>
+        </form>
+
+        <form action="/recommend" method="post">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="u_name">Tên</label>
+                    <input type="text" id="u_name" name="name" required class="input-field">
+                </div>
+                <div class="form-group">
+                    <label for="u_age">Tuổi</label>
+                    <input type="number" id="u_age" name="age" required class="input-field">
+                </div>
+                <div class="form-group">
+                    <label for="u_gender">Giới tính</label>
+                    <select id="u_gender" name="gender" class="input-field">
+                        <option value="0">Nam</option>
+                        <option value="1">Nữ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="u_style">Phong cách</label>
+                    <select id="u_style" name="style" class="input-field">
+                        <option value="1">Công sở</option>
+                        <option value="2">Năng động</option>
+                        <option value="3">Streetwear</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn-main mt-15">AI GỢI Ý PHONG CÁCH</button>
+        </form>
+
+        <hr class="separator">
+
+        <h3 class="section-title">⭐ SẢN PHẨM YÊU THÍCH</h3>
+        <div class="top-rated-grid">
+            {% for item in top_rated %}
+            <div class="mini-card">
+                <img src="{{ url_for('static', filename='images/' + item.image_url) }}" alt="{{ item.item_name }}" class="mini-img">
+                <div class="mini-info">
+                    <p class="mini-name">{{ item.item_name }}</p>
+                    <span class="mini-rating">⭐ {{ item.rating }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

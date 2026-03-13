@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gợi ý từ AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container wide">
+        <div class="shop-header">
+            <h2>Chào <span class="neon">{{ name }}</span>!</h2>
+            <div class="cart-box">🛍️ Gợi ý phối đồ AI</div>
+        </div>
+
+        <div class="result-grid">
+            {% for r in recs %}
+            <div class="product-card">
+                <div class="image-box">
+                    <img src="{{ url_for('static', filename='images/' + r.image) }}" alt="{{ r.name }}" class="p-img">
+                    <div class="match-badge">{{ r.score }}% Match</div>
+                </div>
+                <div class="product-info">
+                    <h3>{{ r.name }}</h3>
+                    <div class="price">{{ r.price }}</div>
+                    <a href="/checkout?item_name={{ r.name }}&image={{ r.image }}" class="btn-main mt-15">MUA NGAY</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-30">
+            <a href="/" class="btn-back">← Quay lại trang chủ</a>
+        </div>
+    </div>
+</body>
+</html>

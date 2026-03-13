@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác nhận đơn hàng</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center neon">🎉 ĐẶT HÀNG THÀNH CÔNG</h2>
+        <div class="checkout-card">
+            <div class="checkout-img-box">
+                <img src="{{ url_for('static', filename='images/' + image) }}" alt="{{ item_name }}" class="checkout-img">
+            </div>
+            <h3>{{ item_name }}</h3>
+            <p class="status-tag">Đã thêm vào danh sách chờ giao!</p>
+        </div>
+
+        <hr class="separator">
+
+        <div id="rating-section" class="text-center">
+            <p class="text-muted">Bạn hài lòng với gợi ý này của AI chứ?</p>
+            <div class="stars">
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+            </div>
+            <button class="btn-main mt-15" onclick="submitRating('{{ item_name }}')">GỬI ĐÁNH GIÁ</button>
+        </div>
+        
+        <div class="text-center mt-20">
+            <a href="/" class="btn-back">Quay lại trang chủ</a>
+        </div>
+    </div>
+
+    <script>
+        function submitRating(itemName) {
+            const val = document.querySelector('input[name="rating"]:checked')?.value;
+            if(!val) return alert("Vui lòng chọn số sao!");
+
+            const fd = new FormData();
+            fd.append('item_name', itemName);
+            fd.append('rating', val);
+
+            fetch('/rate', { method: 'POST', body: fd })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('rating-section').innerHTML = 
+                    "<h3 class='thanks-msg'>Cảm ơn bạn đã đánh giá! ⭐</h3>";
+            });
+        }
+    </script>
+</body>
+</html>
